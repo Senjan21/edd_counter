@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Edd Counter</title>
+    <link href="output.css", rel="stylesheet">
+    <meta content="Edd got Edd'd" property="og:title"/>
+    <meta content="Site for keeping track of Edds records" property="og:description">
+    <meta content="#1A103C" data-react-helmet="true" name="theme-color" />
+    <script>
+        window.onload = function(){
+            let output = document.getElementById('days');
+            const oneDay = 1000 * 60 * 60 * 24;
+
+
+
+            // CHANGE THESE 3 LINES TO ADJUST LAST TIME Edd GOT EDD'd
+            const year = 2023
+            const month = 11
+            const day = 12
+            /// CHANGE THESE 3 LINES ABOVE TO ADJUST LAST TIME edd GOT EDD'd
+
+
+
+            const start = Date.UTC(year,month-1, day);
+            const end = Date.now();
+            let res = (end - start) / oneDay
+            output.innerHTML = Math.floor(res)
+        }
+    </script>
+</head>
+<body class="flex flex-shrink-0 justify-center items-center min-h-screen">
+    <div class="card w-2/4 bg-neutral shadow-xl min-w-fit">
+        <div class="card-body">
+            <div class="rounded-xl outline outline-4 outline-error">
+                <h2 class="card-title">
+                    <div class="alert alert-error rounded-none rounded-t-lg flex justify-center">
+                        <span class="text-warning-content text-5xl">
+                            IT HAS BEEN
+                        </span>
+                    </div>
+                </h2>
+                <div class="stat">
+                    <div class="stat-value text-error text-6xl pt-4">
+                        <div class="flex">
+                            <p id="days" class="text-right">0</p><p class="text-base-content pl-2">DAYS</p></div>
+                        </div>
+                    <!-- <div> DAYS</div> -->
+                    <div class="stat-desc text-info text-center text-xl pt-4">since Edd was struck with SFW lounge</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
